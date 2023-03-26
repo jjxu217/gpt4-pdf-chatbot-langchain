@@ -3,7 +3,7 @@ import { OpenAIEmbeddings } from 'langchain/embeddings';
 import { PineconeStore } from 'langchain/vectorstores';
 import { makeChain } from '@/utils/makechain';
 import { pinecone } from '@/utils/pinecone-client';
-import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
+import { PINECONE_INDEX_NAME} from '@/config/pinecone';
 
 export default async function handler(
   req: NextApiRequest,
@@ -24,7 +24,7 @@ export default async function handler(
     index,
     new OpenAIEmbeddings({}),
     'text',
-    PINECONE_NAME_SPACE, //optional
+    // PINECONE_NAME_SPACE, //optional
   );
 
   res.writeHead(200, {

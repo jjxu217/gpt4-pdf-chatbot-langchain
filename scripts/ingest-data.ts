@@ -3,7 +3,7 @@ import { OpenAIEmbeddings } from 'langchain/embeddings';
 import { PineconeStore } from 'langchain/vectorstores';
 import { pinecone } from '@/utils/pinecone-client';
 import { PDFLoader } from 'langchain/document_loaders';
-import { PINECONE_INDEX_NAME, PINECONE_NAME_SPACE } from '@/config/pinecone';
+import { PINECONE_INDEX_NAME} from '@/config/pinecone';
 
 /* Name of directory to retrieve files from. You can change this as required */
 const filePath = 'docs/MorseVsFrederick.pdf';
@@ -43,7 +43,7 @@ export const run = async () => {
         chunk,
         embeddings,
         'text',
-        PINECONE_NAME_SPACE,
+        // PINECONE_NAME_SPACE,
       );
     }
   } catch (error) {
